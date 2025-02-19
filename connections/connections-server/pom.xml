@@ -17,6 +17,14 @@
       <scope>provided</scope>
     </dependency>
 
+
+    <dependency>
+      <groupId>org.jetbrains.teamcity</groupId>
+      <artifactId>oauth</artifactId>
+      <version>${teamcity-version}</version>
+      <scope>provided</scope>
+    </dependency>
+
     <dependency>
       <groupId>org.jetbrains.teamcity</groupId>
       <artifactId>server-web-api</artifactId>
