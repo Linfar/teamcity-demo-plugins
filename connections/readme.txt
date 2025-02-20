@@ -1,15 +1,7 @@
+This is a demo plugin showing how to create and use a custom project-level connection in TeamCity.
 
- TeamCity server-side plugin
+The connection is defined in the CustomConnection class and rendered in customConnectionEditForm.jsp.
 
- This is an empty project to develop TeamCity plugin that operates on server-side only.
+There are 2 usage examples of this connection - in a build feature (CustomConnectionBuildFeature) and in a runner (RunnerUsingCustomConnection).
 
- 1. Implement
- Put your implementing classes to "<artifactId>-server" module. Do not forget to update spring context file in 'main/resources/META-INF'. See TeamCity documentation for details.
-
- 2. Build
- Issue 'mvn package' command from the root project to build your plugin. Resulting package <artifactId>.zip will be placed in 'target' directory. 
- 
- 3. Install
- To install the plugin, put zip archive to 'plugins' dir under TeamCity data directory and restart the server.
-
- 
+There's no agent part in this plugin, so feature and runner don't actually do anything in the build.
