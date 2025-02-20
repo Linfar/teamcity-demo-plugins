@@ -21,6 +21,7 @@ import java.util.*;
  * Important! This build feature doesn't have agent-side implementation, therefore, does nothing in the build
  */
 public class CustomConnectionBuildFeature extends BuildFeature {
+    public static final String CONNECTION_ID = "connectionId";
     private final PluginDescriptor pluginDescriptor;
     private final ProjectConnectionsManager projectConnectionsManager;
 
@@ -48,8 +49,8 @@ public class CustomConnectionBuildFeature extends BuildFeature {
             @Override
             public Collection<InvalidProperty> process(Map<String, String> map) {
                 ArrayList<InvalidProperty> invalidProperties = new ArrayList<>();
-                if (!map.containsKey("connectionId")) {
-                    invalidProperties.add(new InvalidProperty("connectionId", "Connection not selected"));
+                if (!map.containsKey(CONNECTION_ID)) {
+                    invalidProperties.add(new InvalidProperty(CONNECTION_ID, "Connection not selected"));
                 }
                 return invalidProperties;
             }

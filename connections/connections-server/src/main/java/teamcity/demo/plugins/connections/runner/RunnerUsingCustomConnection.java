@@ -19,6 +19,9 @@ import java.util.*;
  */
 public class RunnerUsingCustomConnection extends RunType {
     public static final String RUNNER_TYPE = "CustomRunner";
+    public static final String CONNECTION_ID = "connectionId";
+    public static final String CONNECTION_USER_NAME = "customConnectionUserName";
+    public static final String CONNECTION_PASSWORD = "customConnectionPassword";
     private final PluginDescriptor pluginDescriptor;
 
     public RunnerUsingCustomConnection(RunTypeRegistry runTypeRegistry,
@@ -58,8 +61,8 @@ public class RunnerUsingCustomConnection extends RunType {
             @Override
             public Collection<InvalidProperty> process(Map<String, String> map) {
                 List<InvalidProperty> invalidProperties = new ArrayList<>();
-                if (!map.containsKey("connectionId")) {
-                    invalidProperties.add(new InvalidProperty("connectionId", "Connection not selected"));
+                if (!map.containsKey(CONNECTION_ID)) {
+                    invalidProperties.add(new InvalidProperty(CONNECTION_ID, "Connection not selected"));
                 }
                 return invalidProperties;
             }

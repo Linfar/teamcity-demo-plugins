@@ -23,6 +23,8 @@ import java.util.*;
 public class CustomConnection extends OAuthProvider {
 
     public static final String CUSTOM_CONNECTION_TYPE = "CustomConnection";
+    public static final String USER = "user";
+    public static final String PASSWORD = "user";
     private final PluginDescriptor pluginDescriptor;
 
     public CustomConnection(PluginDescriptor pluginDescriptor) {
@@ -41,8 +43,8 @@ public class CustomConnection extends OAuthProvider {
             @Override
             public Collection<InvalidProperty> process(Map<String, String> map) {
                 List<InvalidProperty> invalidProperties = new ArrayList<>();
-                if (!map.containsKey("user")) {
-                    invalidProperties.add(new InvalidProperty("user", "User not selected"));
+                if (!map.containsKey(USER)) {
+                    invalidProperties.add(new InvalidProperty(USER, "User not selected"));
                 }
                 return invalidProperties;
             }

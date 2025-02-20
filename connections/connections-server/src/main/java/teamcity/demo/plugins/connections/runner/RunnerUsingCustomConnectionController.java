@@ -53,16 +53,16 @@ public class RunnerUsingCustomConnectionController implements EditRunTypeControl
     @Override
     public ActionErrors validate(@NotNull HttpServletRequest httpServletRequest, @NotNull BuildTypeForm buildTypeForm) {
         ActionErrors actionErrors = new ActionErrors();
-        String connectionId = buildTypeForm.getBuildRunnerBean().getPropertiesBean().getProperties().get("connectionId");
+        String connectionId = buildTypeForm.getBuildRunnerBean().getPropertiesBean().getProperties().get(RunnerUsingCustomConnection.CONNECTION_ID);
         if (StringUtil.isEmpty(connectionId)) {
-            actionErrors.addError(new InvalidProperty("connectionId", "Connection not selected"));
+            actionErrors.addError(new InvalidProperty(RunnerUsingCustomConnection.CONNECTION_ID, "Connection not selected"));
         }
         Optional<ConnectionDescriptor> any = getAvailableConnections(buildTypeForm)
                 .stream()
                 .filter(c -> c.getId().equals(connectionId))
                 .findAny();
         if (!any.isPresent()) {
-            actionErrors.addError(new InvalidProperty("connectionId", "Connection not found"));
+            actionErrors.addError(new InvalidProperty(RunnerUsingCustomConnection.CONNECTION_ID, "Connection not found"));
         }
         return new ActionErrors();
     }

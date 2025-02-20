@@ -8,24 +8,25 @@
 
 <%-- renders a required field "Display name" --%>
 <oauth:displayName note="Name this connection to distinguish it from others."/>
+<%@ page import="teamcity.demo.plugins.connections.CustomConnection" %>
 
 <%-- renders username --%>
 <tr>
-    <th><label for="user">Username:<l:star/></label></th>
+    <th><label for="${CustomConnection.USER}">Username:<l:star/></label></th>
     <td>
-        <props:textProperty name="user" className="longField"/>
+        <props:textProperty name="${CustomConnection.USER}" className="longField"/>
         <%-- TeamCity will put a validation error from OAuthProvider.getPropertiesProcessor() here --%>
-        <span class="error" id="error_user"></span>
+        <span class="error" id="error_${CustomConnection.USER}"></span>
         <span class="smallNote">Username</span>
     </td>
 </tr>
 
 <tr>
-    <th><label for="secure:passwd">Password:<l:star/></label></th>
+    <th><label for="secure:${CustomConnection.PASSWORD}">Password:<l:star/></label></th>
     <td>
         <%-- password properties are safely passed to backend, no additional efforts needed --%>
-        <props:passwordProperty name="secure:passwd" className="longField"/>
+        <props:passwordProperty name="secure:${CustomConnection.PASSWORD}" className="longField"/>
         <%-- TeamCity will put a validation error from OAuthProvider.getPropertiesProcessor() here --%>
-        <span class="error" id="error_secure:passwd"></span>
+        <span class="error" id="error_secure:${CustomConnection.PASSWORD}"></span>
     </td>
 </tr>

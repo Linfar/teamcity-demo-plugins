@@ -37,7 +37,7 @@ public class RunnerParametersProvider implements BuildStartContextProcessor {
                     continue;
                 }
 
-                String connectionId = runnerContext.getBuildParameters().get("connectionId");
+                String connectionId = runnerContext.getBuildParameters().get(RunnerUsingCustomConnection.CONNECTION_ID);
 
                 if (StringUtil.isEmpty(connectionId)) {
                     Loggers.SERVER.warn("Connection ID not set for the runner " + RunnerUsingCustomConnection.RUNNER_TYPE + " in build " + buildStartContext.getBuild().getBuildId());
@@ -53,10 +53,10 @@ public class RunnerParametersProvider implements BuildStartContextProcessor {
                 ConnectionDescriptor connectionDescriptor = any.get();
 
                 // customConnectionUserName and customConnectionPassword will be available in the runner on the agent side
-                runnerContext.addBuildParameter("customConnectionUserName", connectionDescriptor.getParameters().get("user"));
-                String password = connectionDescriptor.getParameters().get("password");
+                runnerContext.addBuildParameter(RunnerUsingCustomConnection.CONNECTION_USER_NAME, connectionDescriptor.getParameters().get(CustomConnection.USER));
+                String password = connectionDescriptor.getParameters().get(CustomConnection.PASSWORD);
                 if (StringUtil.isNotEmpty(password)) {
-                    runnerContext.addBuildParameter("customConnectionPassword", password);
+                    runnerContext.addBuildParameter(RunnerUsingCustomConnection.CONNECTION_PASSWORD, password);
                 }
             }
         }
