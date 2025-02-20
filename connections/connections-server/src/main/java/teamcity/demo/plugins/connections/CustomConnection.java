@@ -7,9 +7,7 @@ import jetbrains.buildServer.web.openapi.PluginDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
+import java.util.*;
 
 /**
  * OAuthProvider is the base class for project-level Connections
@@ -42,7 +40,11 @@ public class CustomConnection extends OAuthProvider {
         return new PropertiesProcessor() {
             @Override
             public Collection<InvalidProperty> process(Map<String, String> map) {
-                return Collections.emptyList();
+                List<InvalidProperty> invalidProperties = new ArrayList<>();
+                if (!map.containsKey("user")) {
+                    invalidProperties.add(new InvalidProperty("user", "User not selected"));
+                }
+                return invalidProperties;
             }
         };
     }
