@@ -13,12 +13,18 @@ import java.util.Map;
 
 /**
  * OAuthProvider is the base class for project-level Connections
- *
+ * <p>
  * The OAuthProvider extension should be added to the Spring context in order TeamCity Core
  * can find it.
+ * <p>
+ * Project-level Connections are recommended to use to provide end users ability to set
+ * up connections to third-party resources in a way when it's possible to control the visibility
+ * (only sub-projects have access to a connection configured in a project) and to reuse this connection
+ * in many builds.
  */
 public class CustomConnection extends OAuthProvider {
 
+    public static final String CUSTOM_CONNECTION_TYPE = "CustomConnection";
     private final PluginDescriptor pluginDescriptor;
 
     public CustomConnection(PluginDescriptor pluginDescriptor) {
@@ -44,7 +50,7 @@ public class CustomConnection extends OAuthProvider {
     @NotNull
     @Override
     public String getType() {
-        return "CustomConnection";
+        return CUSTOM_CONNECTION_TYPE;
     }
 
     @Nullable
