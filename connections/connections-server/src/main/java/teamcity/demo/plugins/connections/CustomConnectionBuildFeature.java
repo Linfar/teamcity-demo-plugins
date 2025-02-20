@@ -17,6 +17,8 @@ import java.util.*;
  * It's recommended to use Build Features whenever a build-wide effect is needed - when all
  * steps in the build should be covered. Eg to authorize docker registries, watch files, add monitoring,
  * etc.
+ * <p>
+ * Important! This build feature doesn't have agent-side implementation, therefore, does nothing in the build
  */
 public class CustomConnectionBuildFeature extends BuildFeature {
     private final PluginDescriptor pluginDescriptor;

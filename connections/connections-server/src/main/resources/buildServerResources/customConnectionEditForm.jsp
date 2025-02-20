@@ -14,7 +14,7 @@
     <th><label for="user">Username:<l:star/></label></th>
     <td>
         <props:textProperty name="user" className="longField"/>
-        <%-- TeamCity will put a validation errors from OAuthProvider.getPropertiesProcessor() here --%>
+        <%-- TeamCity will put a validation error from OAuthProvider.getPropertiesProcessor() here --%>
         <span class="error" id="error_user"></span>
         <span class="smallNote">Username</span>
     </td>
@@ -25,7 +25,7 @@
     <td>
         <%-- password properties are safely passed to backend, no additional efforts needed --%>
         <props:passwordProperty name="secure:passwd" className="longField"/>
-        <%-- TeamCity will put a validation errors from OAuthProvider.getPropertiesProcessor() here --%>
+        <%-- TeamCity will put a validation error from OAuthProvider.getPropertiesProcessor() here --%>
         <span class="error" id="error_secure:passwd"></span>
     </td>
 </tr>

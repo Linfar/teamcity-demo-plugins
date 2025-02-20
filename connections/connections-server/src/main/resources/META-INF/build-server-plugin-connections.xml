@@ -5,4 +5,7 @@
        default-autowire="constructor">
     <bean class="teamcity.demo.plugins.connections.CustomConnection"/>
     <bean class="teamcity.demo.plugins.connections.CustomConnectionBuildFeature"/>
+    <bean class="teamcity.demo.plugins.connections.runner.RunnerUsingCustomConnection"/>
+    <bean class="teamcity.demo.plugins.connections.runner.RunnerUsingCustomConnectionController"/>
+    <bean class="teamcity.demo.plugins.connections.runner.RunnerParametersProvider"/>
 </beans>
