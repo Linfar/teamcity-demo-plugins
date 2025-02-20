@@ -53,7 +53,7 @@ public class RunnerParametersProvider implements BuildStartContextProcessor {
                 ConnectionDescriptor connectionDescriptor = any.get();
 
                 // customConnectionUserName and customConnectionPassword will be available in the runner on the agent side
-                runnerContext.addBuildParameter("customConnectionUserName", connectionDescriptor.getParameters().get("userName"));
+                runnerContext.addBuildParameter("customConnectionUserName", connectionDescriptor.getParameters().get("user"));
                 String password = connectionDescriptor.getParameters().get("password");
                 if (StringUtil.isNotEmpty(password)) {
                     runnerContext.addBuildParameter("customConnectionPassword", password);
