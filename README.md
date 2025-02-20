@@ -8,3 +8,6 @@ Whenever you want to create a new plugin, we recommend using either maven archet
 mvn org.apache.maven.plugins:maven-archetype-plugin:2.4:generate -DarchetypeRepository=https://download.jetbrains.com/teamcity-repository -DarchetypeArtifactId=teamcity-server-plugin -DarchetypeGroupId=org.jetbrains.teamcity.archetypes -DarchetypeVersion=RELEASE -DteamcityVersion=2024.12
 ```
 or gradle: https://github.com/rodm/gradle-teamcity-plugin
+
+## [connections](https://github.com/Linfar/teamcity-demo-plugins/tree/main/connections)
+"connections" is a demo plugin showing how to create and use a custom project-level connection in TeamCity.
