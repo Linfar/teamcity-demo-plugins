@@ -6,7 +6,7 @@ There are 2 usage examples of this connection - in a build feature (CustomConnec
 
 There's no agent part in this plugin, so feature and runner don't actually do anything in the build.
 
-### How to build and install locally
+### How to build
 
 To build: 
 1. Execute `mvn package`
