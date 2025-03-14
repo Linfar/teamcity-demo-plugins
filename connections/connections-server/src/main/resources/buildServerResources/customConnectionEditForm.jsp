@@ -16,7 +16,7 @@
 <script>
     BS.OAuthConnectionDialog.submitTestConnection = function () {
         var that = this;
-        BS.PasswordFormSaver.save(this, '<c:url value="/repo/registry-test-connection.html"/>', OO.extend(BS.ErrorsAwareListener, {
+        BS.PasswordFormSaver.save(this, '<c:url value="/customConnection/registry-test-connection.html"/>', OO.extend(BS.ErrorsAwareListener, {
             onFailedTestConnectionError: function (elem) {
                 var text = "";
                 if (elem.firstChild) {

@@ -33,7 +33,7 @@ public class CustomConnectionCheckConnectionController extends BaseFormXmlContro
         this.sslTrustStoreProvider = sslTrustStoreProvider;
         this.requestHandler = requestHandler;
 
-        webControllerManager.registerController("/repo/registry-test-connection.html", this);
+        webControllerManager.registerController("/customConnection/registry-test-connection.html", this);
     }
 
     @Override
