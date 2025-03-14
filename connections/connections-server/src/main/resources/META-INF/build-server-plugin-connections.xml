@@ -8,4 +8,5 @@
     <bean class="teamcity.demo.plugins.connections.runner.RunnerUsingCustomConnection"/>
     <bean class="teamcity.demo.plugins.connections.runner.RunnerUsingCustomConnectionController"/>
     <bean class="teamcity.demo.plugins.connections.runner.RunnerParametersProvider"/>
+    <bean class="teamcity.demo.plugins.connections.CustomConnectionCheckConnectionController"/>
 </beans>
