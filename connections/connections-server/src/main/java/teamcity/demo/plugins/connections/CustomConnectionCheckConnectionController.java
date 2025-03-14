@@ -2,10 +2,12 @@ package teamcity.demo.plugins.connections;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import jetbrains.buildServer.controllers.*;
+import jetbrains.buildServer.controllers.ActionErrors;
+import jetbrains.buildServer.controllers.BaseFormXmlController;
+import jetbrains.buildServer.controllers.BasePropertiesBean;
+import jetbrains.buildServer.controllers.PublicKeyUtil;
 import jetbrains.buildServer.controllers.admin.projects.PluginPropertiesUtil;
 import jetbrains.buildServer.http.SimpleCredentials;
-import jetbrains.buildServer.log.Loggers;
 import jetbrains.buildServer.serverSide.SBuildServer;
 import jetbrains.buildServer.util.HTTPRequestBuilder;
 import jetbrains.buildServer.util.ssl.SSLTrustStoreProvider;
@@ -23,6 +25,8 @@ import java.util.Map;
 public class CustomConnectionCheckConnectionController extends BaseFormXmlController {
     private final SSLTrustStoreProvider sslTrustStoreProvider;
     private final HTTPRequestBuilder.RequestHandler requestHandler;
+    // the URL should be changed for each plugin
+    private final String checkConnectionURL = "/" + CustomConnection.CUSTOM_CONNECTION_TYPE + "/registry-test-connection.html";
     private Gson gson = new Gson();
 
     public CustomConnectionCheckConnectionController(WebControllerManager webControllerManager,
@@ -33,7 +37,7 @@ public class CustomConnectionCheckConnectionController extends BaseFormXmlContro
         this.sslTrustStoreProvider = sslTrustStoreProvider;
         this.requestHandler = requestHandler;
 
-        webControllerManager.registerController("/customConnection/registry-test-connection.html", this);
+        webControllerManager.registerController(checkConnectionURL, this);
     }
 
     @Override
