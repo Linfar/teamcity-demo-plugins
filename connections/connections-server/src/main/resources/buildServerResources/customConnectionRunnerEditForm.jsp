@@ -21,7 +21,7 @@
         <%-- chooser to select one of the existing connections --%>
         <props:selectProperty id="${RunnerUsingCustomConnection.CONNECTION_ID}" name="${RunnerUsingCustomConnection.CONNECTION_ID}">
             <props:option value="">No custom connection selected</props:option>
-            <%-- iterating through all available connections to show an option for each of tham --%>
+            <%-- iterating through all available connections to show an option for each of them --%>
             <%--@elvariable id="availableConnections" type="java.util.List<teamcity.demo.plugins.connections.CustomConnection>"--%>
             <c:forEach var="conn" items="${availableConnections}">
                 <!-- propertiesBean.properties['connectionId'] contains the currently selected connection for an existing build runner -->
