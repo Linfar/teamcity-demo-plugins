@@ -24,7 +24,7 @@
             <%-- iterating through all available connections to show an option for each of tham --%>
             <%--@elvariable id="availableConnections" type="java.util.List<teamcity.demo.plugins.connections.CustomConnection>"--%>
             <c:forEach var="conn" items="${availableConnections}">
-                <!-- propertiesBean.properties['connectionId'] contains the currently selected connection for an existing build feature -->
+                <!-- propertiesBean.properties['connectionId'] contains the currently selected connection for an existing build runner -->
                 <forms:option selected="${propertiesBean.properties[RunnerUsingCustomConnection.CONNECTION_ID]==conn.id}"  value='${conn.id}'><c:out value="${conn.connectionDisplayName}"/></forms:option>
             </c:forEach>
         </props:selectProperty>
