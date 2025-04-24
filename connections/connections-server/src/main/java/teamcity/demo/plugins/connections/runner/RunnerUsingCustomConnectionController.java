@@ -30,7 +30,7 @@ public class RunnerUsingCustomConnectionController implements EditRunTypeControl
     public RunnerUsingCustomConnectionController(ProjectConnectionsManager projectConnectionsManager,
                                                  ExtensionHolder extensionHolder) {
         this.projectConnectionsManager = projectConnectionsManager;
-        extensionHolder.registerExtension(EditRunTypeControllerExtension.class, RunnerUsingCustomConnection.RUNNER_TYPE, this);
+        extensionHolder.registerExtension(RunnerUsingCustomConnectionController.class, RunnerUsingCustomConnection.RUNNER_TYPE, this);
     }
 
     @Override
