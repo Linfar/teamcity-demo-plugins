@@ -1,0 +1,15 @@
+jobs:
+  Job1:
+    name: Build
+    steps:
+      - type: script
+        name: second
+        script-content: ls
+      - type: script
+        name: first
+        script-content: ls %bla%
+    runs-on: self-hosted
+parameters:
+  sdfg: |-
+    sdfgsdf
+    sdfgsdf
